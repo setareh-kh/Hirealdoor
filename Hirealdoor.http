@@ -1,0 +1,6 @@
+@Hirealdoor_HostAddress = http://localhost:5236
+
+GET {{Hirealdoor_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
