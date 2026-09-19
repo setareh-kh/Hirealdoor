@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hirealdoor.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20260919112622_addindexemailetopersontable")]
-    partial class addindexemailetopersontable
+    [Migration("20260919130329_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
