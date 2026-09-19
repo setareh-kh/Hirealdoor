@@ -140,3 +140,5 @@ D:\.net project\Hirealdoor\bin\Debug\net10.0\runtimes\win-x64\native\k5sprt64.dl
 D:\.net project\Hirealdoor\bin\Debug\net10.0\runtimes\win-x64\native\krb5_64.dll
 D:\.net project\Hirealdoor\bin\Debug\net10.0\runtimes\win-x64\native\krbcc64.dll
 D:\.net project\Hirealdoor\bin\Debug\net10.0\runtimes\win\lib\net10.0\System.Windows.Extensions.dll
+D:\.net project\Hirealdoor\bin\Debug\net10.0\AutoMapper.dll
+D:\.net project\Hirealdoor\bin\Debug\net10.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

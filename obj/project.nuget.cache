@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hP6pvqmJg58=",
+  "dgSpecHash": "NRYrfDXT8Ak=",
   "success": true,
   "projectFilePath": "D:\\.net project\\Hirealdoor\\Hirealdoor.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\1\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\1\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\google.protobuf\\3.35.0\\google.protobuf.3.35.0.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -49,5 +51,15 @@
     "C:\\Users\\1\\.nuget\\packages\\system.windows.extensions\\10.0.8\\system.windows.extensions.10.0.8.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\zstdsharp.port\\0.8.8\\zstdsharp.port.0.8.8.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "projectPath": "D:\\.net project\\Hirealdoor\\Hirealdoor.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\.net project\\Hirealdoor\\Hirealdoor.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

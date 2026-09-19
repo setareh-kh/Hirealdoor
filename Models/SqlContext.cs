@@ -22,7 +22,7 @@ public class SqlContext : DbContext
         modelBuilder.Entity<User>(e =>
          {
              e.HasKey(x => x.Id);
-             e.Property(x => x.Email).IsRequired();
+             e.HasIndex(x => x.Email).IsUnique();
          });
 
         modelBuilder.Entity<Person>(entity =>
@@ -37,7 +37,7 @@ public class SqlContext : DbContext
         modelBuilder.Entity<Office>(entity =>
         {
             entity.HasKey(x => x.Id);
-             // Shared Primary Key
+            // Shared Primary Key
             entity.HasOne(x => x.User)
                 .WithOne(x => x.Office)
                 .HasForeignKey<Office>(x => x.Id)
