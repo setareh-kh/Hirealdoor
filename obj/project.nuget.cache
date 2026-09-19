@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NRYrfDXT8Ak=",
+  "dgSpecHash": "MBde9aE+kcE=",
   "success": true,
   "projectFilePath": "D:\\.net project\\Hirealdoor\\Hirealdoor.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\1\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
-    "C:\\Users\\1\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\1\\.nuget\\packages\\automapper\\16.2.0\\automapper.16.2.0.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\google.protobuf\\3.35.0\\google.protobuf.3.35.0.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -28,6 +27,10 @@
     "C:\\Users\\1\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\10.0.12\\microsoft.entityframeworkcore.tools.10.0.12.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\microsoft.extensions.apidescription.server\\10.0.0\\microsoft.extensions.apidescription.server.10.0.0.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.12\\microsoft.extensions.dependencymodel.10.0.12.nupkg.sha512",
+    "C:\\Users\\1\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.14.0\\microsoft.identitymodel.abstractions.8.14.0.nupkg.sha512",
+    "C:\\Users\\1\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.14.0\\microsoft.identitymodel.jsonwebtokens.8.14.0.nupkg.sha512",
+    "C:\\Users\\1\\.nuget\\packages\\microsoft.identitymodel.logging\\8.14.0\\microsoft.identitymodel.logging.8.14.0.nupkg.sha512",
+    "C:\\Users\\1\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.14.0\\microsoft.identitymodel.tokens.8.14.0.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\microsoft.openapi\\2.7.5\\microsoft.openapi.2.7.5.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\microsoft.visualstudio.solutionpersistence\\1.0.52\\microsoft.visualstudio.solutionpersistence.1.0.52.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
@@ -51,18 +54,5 @@
     "C:\\Users\\1\\.nuget\\packages\\system.windows.extensions\\10.0.8\\system.windows.extensions.10.0.8.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\zstdsharp.port\\0.8.8\\zstdsharp.port.0.8.8.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "Package 'AutoMapper' 12.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
-      "projectPath": "D:\\.net project\\Hirealdoor\\Hirealdoor.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\.net project\\Hirealdoor\\Hirealdoor.csproj",
-      "libraryId": "AutoMapper",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }
