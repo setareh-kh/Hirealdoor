@@ -23,6 +23,7 @@ builder.Services.AddAutoMapper(cfg => { }, typeof(Program));
 builder.Services.AddScoped<IOfficeRepository,OfficeRepository>();
 builder.Services.AddScoped<IUserRepository,UserRepository>();
 builder.Services.AddScoped<IPersonRepository,PersonRepository>();
+builder.Services.AddScoped<ILanguageRepository,LanguageRepository>();
 builder.Services.AddScoped(typeof(IBaseRepository<>),typeof(BaseRepository<>));
 //install IService and Service as services
 builder.Services.AddScoped<IUserService,UserService>();

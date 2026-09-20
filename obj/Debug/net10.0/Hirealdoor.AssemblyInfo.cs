@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hirealdoor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+070fc8f750e3f8935ba957564c72041b79cf47ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6e107652e1b5d8afb40b33ced0e9183f2325795")]
 [assembly: System.Reflection.AssemblyProductAttribute("Hirealdoor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hirealdoor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
