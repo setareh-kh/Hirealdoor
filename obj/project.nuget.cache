@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4u3tiXlQdsU=",
+  "dgSpecHash": "MBde9aE+kcE=",
   "success": true,
-  "projectFilePath": "D:\\.net project\\Hirealdoor-main 2 (2)\\Hirealdoor-main\\Hirealdoor.csproj",
+  "projectFilePath": "D:\\.net project\\Hirealdoor\\Hirealdoor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\1\\.nuget\\packages\\automapper\\16.2.0\\automapper.16.2.0.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",

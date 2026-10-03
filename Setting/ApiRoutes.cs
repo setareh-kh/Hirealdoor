@@ -29,5 +29,7 @@ public class ApiRoutes
         // /api/v1/persons
         public const string Person = Base + "/persons";
         public const string User = Base + "/users";
+        public const string Auth = Base + "/auth";
+        
     }
 }

@@ -20,8 +20,6 @@ namespace Hirealdoor.Models
         public DateTime UpdatedAtCode { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        public bool IsEmailVerified { get; set; }
-
         //one- to-one :shared primery key
         public Person? Person { get; set; }
         public Office? Office { get; set; }

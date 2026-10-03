@@ -16,16 +16,6 @@ namespace Hirealdoor.Controllers
             return Ok(user);
         }
 
-        [HttpPost("verifyemail")]
-        public async Task<IActionResult> VerifyEmail(VerifyEmailDto dto)
-        {
-            var result = await userService.VerifyEmailAsync(dto);
-
-            if (!result)
-                return BadRequest("Invalid or expired verification code.");
-            return Ok("Email verified successfully.");
-        }
-
         [HttpPost("usertype")]
         public async Task<IActionResult> SelectUserType(UserTypeDto userTypeDto)
         {
