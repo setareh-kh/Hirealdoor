@@ -1,8 +1,10 @@
+using Hirealdoor.Installer;
 using Hirealdoor.Models;
 using Hirealdoor.Repositories;
 using Hirealdoor.Repositories.Repository;
 using Hirealdoor.Services;
 using Hirealdoor.Services.Service;
+using Hirealdoor.Setting;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,21 +16,8 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
 // connecting DB
-var myConnection= builder.Configuration.GetConnectionString("MySqlConnection")  ?? throw new InvalidOperationException(
-        "Connection string 'MySqlConnection' was not found.");
-builder.Services.AddDbContext<SqlContext>(opts=>opts.UseMySQL(myConnection));
-// Install AutoMapper services
-builder.Services.AddAutoMapper(cfg => { }, typeof(Program));
-//install IRepository and Repository as services
-builder.Services.AddScoped<IOfficeRepository,OfficeRepository>();
-builder.Services.AddScoped<IUserRepository,UserRepository>();
-builder.Services.AddScoped<IPersonRepository,PersonRepository>();
-builder.Services.AddScoped<ILanguageRepository,LanguageRepository>();
-builder.Services.AddScoped(typeof(IBaseRepository<>),typeof(BaseRepository<>));
-//install IService and Service as services
-builder.Services.AddScoped<IUserService,UserService>();
-builder.Services.AddScoped<IEmailService,EmailService>();
-builder.Services.AddScoped<IPersonService, PersonService>();
+builder.Services.InstallServicesInAssembly(builder.Configuration);
+
 
 var app = builder.Build();
 
@@ -39,6 +28,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<SimpleMiddleware>();
 
 app.UseHttpsRedirection();
 

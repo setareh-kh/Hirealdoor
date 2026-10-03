@@ -3,11 +3,10 @@ using Hirealdoor.Services;
 using Hirealdoor.Setting;
 using Microsoft.AspNetCore.Mvc;
 
-
-namespace Hirealdoor.Controllers
+namespace Hirealdoor.Controllers.Admin
 {
     [ApiController]
-    [Route(ApiRoutes.Website.Person)]
+    [Route(ApiRoutes.Admin.Person)]
     public class PersonController(IPersonService personService) : ControllerBase
     {
         [HttpGet]

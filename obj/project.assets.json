@@ -3318,11 +3318,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\.net project\\Hirealdoor-main 2\\Hirealdoor-main\\Hirealdoor.csproj",
+      "projectUniqueName": "D:\\.net project\\Hirealdoor-main 2 (2)\\Hirealdoor-main\\Hirealdoor.csproj",
       "projectName": "Hirealdoor",
-      "projectPath": "D:\\.net project\\Hirealdoor-main 2\\Hirealdoor-main\\Hirealdoor.csproj",
+      "projectPath": "D:\\.net project\\Hirealdoor-main 2 (2)\\Hirealdoor-main\\Hirealdoor.csproj",
       "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
-      "outputPath": "D:\\.net project\\Hirealdoor-main 2\\Hirealdoor-main\\obj\\",
+      "outputPath": "D:\\.net project\\Hirealdoor-main 2 (2)\\Hirealdoor-main\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\1\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -3820,13 +3820,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
-    }
-  ]
+  }
 }

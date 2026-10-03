@@ -2,6 +2,7 @@ using System.Linq.Expressions;
 using Hirealdoor.Dtos.Requests;
 using Hirealdoor.DTos.Response;
 using Hirealdoor.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hirealdoor.Repositories.Repository;
 

@@ -5,7 +5,8 @@ using Hirealdoor.Repositories;
 
 namespace Hirealdoor.Services.Service;
 
-public class UserService(IUserRepository userRepository, IEmailService emailService) : IUserService
+public class UserService(IUserRepository userRepository, IEmailService emailService)
+    : BaseService<User>(userRepository), IUserService
 {
     //Use Case:registeration
     // 1: create new user by email
