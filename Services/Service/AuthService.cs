@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using Hirealdoor.Dtos.Requests;
+using Hirealdoor.DTos.Response;
 using Hirealdoor.Models;
 using Hirealdoor.Repositories;
 using Hirealdoor.Repositories.Repository;
@@ -11,7 +12,7 @@ public class AuthService(IUserRepository userRepository, IEmailService emailServ
 {
     //registeration
     // 1: create new user by email
-    public async Task<User?> RegisterEmailAsync(EmailRequestDto emailDto)
+    public async Task<RegisterResponseDto> RegisterEmailAsync(EmailRequestDto emailDto)
     {
         var exUser = await userRepository.FindByEmailAsync(emailDto.Email);
         if (exUser != null)
@@ -28,7 +29,11 @@ public class AuthService(IUserRepository userRepository, IEmailService emailServ
         await userRepository.InsertAsync(newUser);
         await userRepository.SaveChangesAsync();
         await emailService.SendVerificationEmailAsync(newUser.Email, newUser.VerifyCode);
-        return newUser;
+        return new RegisterResponseDto
+        {
+            UserId= newUser.Id,
+            Email=newUser.Email
+        };
     }
     private string GenerateCode()
     {
@@ -63,7 +68,7 @@ public class AuthService(IUserRepository userRepository, IEmailService emailServ
 
 
     }
-    public async Task<User?> RegLogin(EmailRequestDto emailDto)
+    public async Task<RegisterResponseDto> RegLogin(EmailRequestDto emailDto)
     {
         var res = await userRepository.FindByEmailAsync(emailDto.Email);
         if (res == null)
@@ -79,7 +84,11 @@ public class AuthService(IUserRepository userRepository, IEmailService emailServ
             await userRepository.InsertAsync(newUser);
             await userRepository.SaveChangesAsync();
             await emailService.SendVerificationEmailAsync(newUser.Email, newUser.VerifyCode);
-            return newUser;
+            return new RegisterResponseDto
+        {
+            UserId= newUser.Id,
+            Email=newUser.Email
+        };
         }
         else
         {
@@ -89,7 +98,11 @@ public class AuthService(IUserRepository userRepository, IEmailService emailServ
             await userRepository.UpdateByIdAsync(res);
             await userRepository.SaveChangesAsync();
             await emailService.SendVerificationEmailAsync(res.Email, res.VerifyCode);
-            return res;
+            return new RegisterResponseDto
+        {
+            UserId= res.Id,
+            Email=res.Email
+        };
         }
     }
 }

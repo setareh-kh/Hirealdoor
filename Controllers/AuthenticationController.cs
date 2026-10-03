@@ -30,7 +30,7 @@ namespace Hirealdoor.Controllers
         [HttpPost("Login")]
         public async Task<IActionResult> Login(EmailRequestDto emailRequestDto)
         {
-            var user = await authService.RegisterEmailAsync(emailRequestDto);
+            var user = await authService.Login(emailRequestDto);
             return Ok(user);
         }
         [HttpPost("register&login")]

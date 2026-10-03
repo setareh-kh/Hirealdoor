@@ -1,13 +1,14 @@
 using Hirealdoor.Dtos.Requests;
+using Hirealdoor.DTos.Response;
 using Hirealdoor.Models;
 
 namespace Hirealdoor.Services;
 
 public interface IAuthService
 {
-    Task<User?> RegisterEmailAsync(EmailRequestDto emailDto);
+    Task<RegisterResponseDto> RegisterEmailAsync(EmailRequestDto emailDto);
     Task<bool> VerifyEmailAsync(VerifyEmailDto verifyEmailDto);
     Task<bool> Login(EmailRequestDto emailDto);
-    Task<User?> RegLogin(EmailRequestDto emailDto);
+    Task<RegisterResponseDto> RegLogin(EmailRequestDto emailDto);
 
 }

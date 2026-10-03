@@ -15,9 +15,10 @@ public class ServiceInstaller: IInstaller
         services.AddScoped<IPersonRepository,PersonRepository>();
         services.AddScoped<ILanguageRepository,LanguageRepository>();
         services.AddScoped(typeof(IBaseRepository<>),typeof(BaseRepository<>));
-//install IService and Service as services
+        //install IService and Service as services
         services.AddScoped<IUserService,UserService>();
         services.AddScoped<IEmailService,EmailService>();
         services.AddScoped<IPersonService, PersonService>();
+        services.AddScoped<IAuthService, AuthService>();
     }
 }

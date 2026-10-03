@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using Hirealdoor.Dtos.Requests;
+using Hirealdoor.DTos.Response;
 using Hirealdoor.Models;
 using Hirealdoor.Repositories;
 
@@ -10,7 +11,7 @@ public class UserService(IUserRepository userRepository, IEmailService emailServ
 {
     //Use Case:registeration
     // 1: create new user by email
-    public async Task<User> RegisterEmailAsync(EmailRequestDto emailRequest)
+    public async Task<RegisterResponseDto> RegisterEmailAsync(EmailRequestDto emailRequest)
     {
         var existingUser = await userRepository.FindByEmailAsync(emailRequest.Email);
 
@@ -29,7 +30,11 @@ public class UserService(IUserRepository userRepository, IEmailService emailServ
         await userRepository.InsertAsync(newUser);
         await userRepository.SaveChangesAsync();
         await emailService.SendVerificationEmailAsync(newUser.Email, newUser.VerifyCode);
-        return newUser;
+        return new RegisterResponseDto
+        {
+            UserId= newUser.Id,
+            Email=newUser.Email
+        };
     }
     private string GenerateCode()
     {
