@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.net project\\Hirealdoor\\Hirealdoor.csproj": {}
+    "D:\\.net project\\Hirealdoor-main 2\\Hirealdoor-main\\Hirealdoor.csproj": {}
   },
   "projects": {
-    "D:\\.net project\\Hirealdoor\\Hirealdoor.csproj": {
+    "D:\\.net project\\Hirealdoor-main 2\\Hirealdoor-main\\Hirealdoor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.net project\\Hirealdoor\\Hirealdoor.csproj",
+        "projectUniqueName": "D:\\.net project\\Hirealdoor-main 2\\Hirealdoor-main\\Hirealdoor.csproj",
         "projectName": "Hirealdoor",
-        "projectPath": "D:\\.net project\\Hirealdoor\\Hirealdoor.csproj",
+        "projectPath": "D:\\.net project\\Hirealdoor-main 2\\Hirealdoor-main\\Hirealdoor.csproj",
         "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
-        "outputPath": "D:\\.net project\\Hirealdoor\\obj\\",
+        "outputPath": "D:\\.net project\\Hirealdoor-main 2\\Hirealdoor-main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\1\\AppData\\Roaming\\NuGet\\NuGet.Config"

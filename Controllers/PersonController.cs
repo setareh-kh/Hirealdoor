@@ -9,6 +9,13 @@ namespace Hirealdoor.Controllers
     [Route("api/persons")]
     public class PersonController(IPersonService personService) : ControllerBase
     {
+        [HttpGet]
+        public async Task<IActionResult> Index([FromQuery] PersonIndexDto filter)
+        {
+            var result = await personService.Filter(filter);
+            return Ok(result);
+        }
+
         [HttpPost("create")]
         public async Task<IActionResult> CreatePerson([FromForm] CreatePersonDto dto)
         {

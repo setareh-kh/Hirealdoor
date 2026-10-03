@@ -58,6 +58,7 @@ public class SqlContext : DbContext
             .HasForeignKey(p => p.CityId)
             .OnDelete(DeleteBehavior.Restrict);
         //person -> ServedArea<-Province
+        
         modelBuilder.Entity<ServedArea>()
         .HasKey(pp => new
         {

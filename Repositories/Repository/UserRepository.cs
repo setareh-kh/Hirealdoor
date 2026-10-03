@@ -7,6 +7,6 @@ public class UserRepository(SqlContext context): BaseRepository<User>(context), 
 {
     public async Task<User?> FindByEmailAsync(string email)
     {
-        return await dbContext.Users.FirstOrDefaultAsync(x => x.Email == email);
+        return await DbContext.Users.FirstOrDefaultAsync(x => x.Email == email);
     }
 }

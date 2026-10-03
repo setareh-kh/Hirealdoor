@@ -2,12 +2,11 @@ using System.Security.Cryptography;
 using Hirealdoor.Dtos.Requests;
 using Hirealdoor.Models;
 using Hirealdoor.Repositories;
+
 namespace Hirealdoor.Services.Service;
 
-
-public class UserService(IUserRepository userRepository, IEmailService emailService): IUserService
+public class UserService(IUserRepository userRepository, IEmailService emailService) : IUserService
 {
-
     //Use Case:registeration
     // 1: create new user by email
     public async Task<User> RegisterEmailAsync(EmailRequestDto emailRequest)
@@ -32,10 +31,12 @@ public class UserService(IUserRepository userRepository, IEmailService emailServ
         await emailService.SendVerificationEmailAsync(newUser.Email, newUser.VerifyCode);
         return newUser;
     }
+
     private string GenerateCode()
     {
         return RandomNumberGenerator.GetInt32(100000, 1000000).ToString();
     }
+
     //2: Verify Email
     public async Task<bool> VerifyEmailAsync(VerifyEmailDto verifyEmailDto)
     {
@@ -53,6 +54,7 @@ public class UserService(IUserRepository userRepository, IEmailService emailServ
         await userRepository.SaveChangesAsync();
         return true;
     }
+
     //3:Select User Type
     public async Task<User> SelectUserTypeAsync(UserTypeDto userTypeDto)
     {
@@ -65,5 +67,4 @@ public class UserService(IUserRepository userRepository, IEmailService emailServ
         await userRepository.SaveChangesAsync();
         return user;
     }
-    
 }
