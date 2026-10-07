@@ -30,6 +30,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseMiddleware<SimpleMiddleware>();
+app.UseMiddleware<JwtMiddleware>();
 
 app.UseHttpsRedirection();
 

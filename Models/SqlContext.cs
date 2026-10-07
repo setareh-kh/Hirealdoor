@@ -2,15 +2,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Hirealdoor.Models;
 
-public class SqlContext : DbContext
+public class SqlContext(DbContextOptions<SqlContext> dbContextOptions) : DbContext(dbContextOptions)
 {
-    public SqlContext(DbContextOptions<SqlContext> dbContextOptions)
-        : base(dbContextOptions)
-    {
-    }
     public DbSet<User> Users => Set<User>();
     public DbSet<Person> Persons => Set<Person>();
     public DbSet<Office> Offices => Set<Office>();
+    public DbSet<Token> Tokens => Set<Token>();
     public DbSet<Province> Provinces => Set<Province>();
     public DbSet<ServedArea> ServedAreas => Set<ServedArea>();
     public DbSet<Language> Languages => Set<Language>();
@@ -20,10 +17,10 @@ public class SqlContext : DbContext
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<User>(e =>
-         {
-             e.HasKey(x => x.Id);
-             e.HasIndex(x => x.Email).IsUnique();
-         });
+        {
+            e.HasKey(x => x.Id);
+            e.HasIndex(x => x.Email).IsUnique();
+        });
 
         modelBuilder.Entity<Person>(entity =>
         {
@@ -58,13 +55,13 @@ public class SqlContext : DbContext
             .HasForeignKey(p => p.CityId)
             .OnDelete(DeleteBehavior.Restrict);
         //person -> ServedArea<-Province
-        
+
         modelBuilder.Entity<ServedArea>()
-        .HasKey(pp => new
-        {
-            pp.PersonId,
-            pp.ProvinceId
-        });
+            .HasKey(pp => new
+            {
+                pp.PersonId,
+                pp.ProvinceId
+            });
 
         modelBuilder.Entity<ServedArea>()
             .HasOne(pp => pp.Person)
@@ -79,8 +76,8 @@ public class SqlContext : DbContext
             .OnDelete(DeleteBehavior.Restrict);
 
         modelBuilder.Entity<Person>()
-        .HasMany(p => p.SpeaksLanguages)
-        .WithMany(l => l.Persons)
-        .UsingEntity("SpeaksLanguages");
+            .HasMany(p => p.SpeaksLanguages)
+            .WithMany(l => l.Persons)
+            .UsingEntity("SpeaksLanguages");
     }
 }

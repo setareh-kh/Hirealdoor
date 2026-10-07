@@ -8,7 +8,7 @@ public interface IAuthService
 {
     Task<RegisterResponseDto> RegisterEmailAsync(EmailRequestDto emailDto);
     Task<bool> VerifyEmailAsync(VerifyEmailDto verifyEmailDto);
-    Task<bool> Login(EmailRequestDto emailDto);
+    Task<StandardResponseDto> Login(EmailRequestDto emailDto);
     Task<RegisterResponseDto> RegLogin(EmailRequestDto emailDto);
 
 }

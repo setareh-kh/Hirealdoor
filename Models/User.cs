@@ -23,5 +23,8 @@ namespace Hirealdoor.Models
         //one- to-one :shared primery key
         public Person? Person { get; set; }
         public Office? Office { get; set; }
+        
+        public ICollection<Token> Tokens { get; set; } = new List<Token>();
+
     }
 }
