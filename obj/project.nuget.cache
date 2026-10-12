@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LiYp18UAt/o=",
+  "dgSpecHash": "gsEYoPxPQtE=",
   "success": true,
   "projectFilePath": "D:\\.net project\\Hirealdoor\\Hirealdoor.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,7 @@
     "C:\\Users\\1\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.12\\microsoft.entityframeworkcore.relational.10.0.12.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\10.0.12\\microsoft.entityframeworkcore.tools.10.0.12.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\microsoft.extensions.apidescription.server\\10.0.0\\microsoft.extensions.apidescription.server.10.0.0.nupkg.sha512",
+    "C:\\Users\\1\\.nuget\\packages\\microsoft.extensions.caching.stackexchangeredis\\10.0.12\\microsoft.extensions.caching.stackexchangeredis.10.0.12.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.12\\microsoft.extensions.dependencymodel.10.0.12.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.19.2\\microsoft.identitymodel.abstractions.8.19.2.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.19.2\\microsoft.identitymodel.jsonwebtokens.8.19.2.nupkg.sha512",
@@ -43,6 +44,8 @@
     "C:\\Users\\1\\.nuget\\packages\\mysql.data\\26.7.0\\mysql.data.26.7.0.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\mysql.entityframeworkcore\\10.0.9\\mysql.entityframeworkcore.10.0.9.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512",
+    "C:\\Users\\1\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\1\\.nuget\\packages\\stackexchange.redis\\2.7.27\\stackexchange.redis.2.7.27.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\swashbuckle.aspnetcore\\10.2.3\\swashbuckle.aspnetcore.10.2.3.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\10.2.3\\swashbuckle.aspnetcore.swagger.10.2.3.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\10.2.3\\swashbuckle.aspnetcore.swaggergen.10.2.3.nupkg.sha512",

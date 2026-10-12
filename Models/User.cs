@@ -15,6 +15,7 @@ namespace Hirealdoor.Models
         [Required, MaxLength(250)] public string Email { get; set; } = null!;
         [MaxLength(250)] public string? Mobile { get; set; }
         public UserType? Type { get; set; }
+        public bool? Active { get; set; }
         [MaxLength(250)] public string VerifyCode { get; set; } = null!;
         public DateTime ExpiresAtCode { get; set; }
         public DateTime UpdatedAtCode { get; set; }
@@ -23,8 +24,7 @@ namespace Hirealdoor.Models
         //one- to-one :shared primery key
         public Person? Person { get; set; }
         public Office? Office { get; set; }
-        
-        public ICollection<Token> Tokens { get; set; } = new List<Token>();
 
+        public ICollection<Token> Tokens { get; set; } = new List<Token>();
     }
 }

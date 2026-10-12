@@ -3,6 +3,7 @@ using Hirealdoor.Repositories;
 using Hirealdoor.Repositories.Repository;
 using Hirealdoor.Services;
 using Hirealdoor.Services.Service;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Hirealdoor.Installer;
 
@@ -29,5 +30,11 @@ public class ServiceInstaller : IInstaller
             .GetSection("AppSettings")
             .Get<AppSettings>();
         services.AddSingleton(appSettings!);
+
+        var redisString = configuration.GetValue<string>("RedisConnectionStrings:Redis");
+        var prefixCache = configuration.GetValue<string>("RedisConnectionStrings:RedisPrefix");
+
+        services.AddSingleton<IRedisService>(_ =>
+            new RedisService(redisString!, prefixCache!));
     }
 }
