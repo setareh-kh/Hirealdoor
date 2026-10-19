@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using Hangfire;
 using Hirealdoor.Dtos.Requests;
 using Hirealdoor.DTos.Response;
 using Hirealdoor.Models;
@@ -29,17 +30,26 @@ public class UserService(IUserRepository userRepository, IEmailService emailServ
         };
         await userRepository.InsertAsync(newUser);
         await userRepository.SaveChangesAsync();
-        await emailService.SendVerificationEmailAsync(newUser.Email, newUser.VerifyCode);
+        BackgroundJob.Enqueue("critical", () =>
+            emailService.SendVerificationEmailAsync(newUser.Email, newUser.VerifyCode));
+        BackgroundJob.Schedule(
+            "critical",
+            () => emailService.SendVerificationEmailAsync(newUser.Email, newUser.VerifyCode),
+            TimeSpan.FromDays(2)
+        );
         return new RegisterResponseDto
         {
-            UserId= newUser.Id,
-            Email=newUser.Email
+            UserId = newUser.Id,
+            Email = newUser.Email
         };
     }
+
+
     private string GenerateCode()
     {
         return RandomNumberGenerator.GetInt32(100000, 1000000).ToString();
     }
+
     public async Task<User> SelectUserTypeAsync(UserTypeDto userTypeDto)
     {
         // Implementation for selecting user type

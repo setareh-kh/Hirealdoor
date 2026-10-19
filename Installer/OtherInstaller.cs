@@ -1,3 +1,5 @@
+using Hangfire;
+
 namespace Hirealdoor.Installer;
 
 public class OtherInstaller : IInstaller
@@ -8,5 +10,7 @@ public class OtherInstaller : IInstaller
         services.AddSwaggerGen();
 
         services.AddAutoMapper(cfg => { }, typeof(Program));
+
+      
     }
 }
