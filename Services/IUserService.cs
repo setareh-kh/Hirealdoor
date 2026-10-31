@@ -6,6 +6,6 @@ namespace Hirealdoor.Services;
 
 public interface IUserService: IBaseService<User>
 {
-    Task<RegisterResponseDto> RegisterEmailAsync(EmailRequestDto emailRequest);
+    Task<StandardResponseDto> RegisterEmailAsync(EmailRequestDto emailRequest);
     Task<User> SelectUserTypeAsync(UserTypeDto userTypeDto);
 }

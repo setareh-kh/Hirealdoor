@@ -12,12 +12,17 @@ public class UserService(IUserRepository userRepository, IEmailService emailServ
 {
     //Use Case:registeration
     // 1: create new user by email
-    public async Task<RegisterResponseDto> RegisterEmailAsync(EmailRequestDto emailRequest)
+    public async Task<StandardResponseDto> RegisterEmailAsync(EmailRequestDto emailRequest)
     {
         var existingUser = await userRepository.FindByEmailAsync(emailRequest.Email);
 
         if (existingUser != null)
-            throw new Exception("Email already exists.");
+            return new StandardResponseDto
+            {
+                Success = false,
+                Message = "Email already exists.",
+                Object = null
+            };
         var now = DateTime.UtcNow;
 
         var newUser = new User
@@ -30,20 +35,25 @@ public class UserService(IUserRepository userRepository, IEmailService emailServ
         };
         await userRepository.InsertAsync(newUser);
         await userRepository.SaveChangesAsync();
-        BackgroundJob.Enqueue("critical", () =>
+        /*BackgroundJob.Enqueue("critical", () =>
             emailService.SendVerificationEmailAsync(newUser.Email, newUser.VerifyCode));
         BackgroundJob.Schedule(
             "critical",
             () => emailService.SendVerificationEmailAsync(newUser.Email, newUser.VerifyCode),
             TimeSpan.FromDays(2)
-        );
-        return new RegisterResponseDto
+        );*/
+        return new StandardResponseDto
         {
-            UserId = newUser.Id,
-            Email = newUser.Email
+            Success = true,
+            Message = "",
+            Object = new
+            {
+                UserId = newUser.Id,
+                Email = newUser.Email,
+                Code = newUser.VerifyCode
+            }
         };
     }
-
 
     private string GenerateCode()
     {

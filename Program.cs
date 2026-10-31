@@ -51,7 +51,7 @@ var timezone = new RecurringJobOptions
     TimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Tehran")
 };
 
-RecurringJob.AddOrUpdate<EmailService>(
+/*RecurringJob.AddOrUpdate<EmailService>(
     "BirthdayEmail",
     "critical",
     x => x.SendVerificationEmailAsync("roshani.net","234567"),
@@ -61,6 +61,6 @@ RecurringJob.AddOrUpdate<EmailService>(
 RecurringJob.AddOrUpdate<IterativeJobs>("WriteHello","critical",j => j.WriteHello(),
     "* * * * *",
     timezone
-);
+);*/
 
 app.Run();

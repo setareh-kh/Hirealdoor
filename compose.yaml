@@ -1,0 +1,27 @@
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: hirealdoor-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "Hagighat0101"
+      MYSQL_DATABASE: hirealdoor
+    ports:
+      - "127.0.0.1:3308:3306"
+    volumes:
+      - hirealdoor-mysql-data:/var/lib/mysql
+    
+  redis:
+    image: redis:7
+    container_name: hirealdoor-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    ports:
+      - "127.0.0.1:6380:6379"
+    volumes:
+      - hirealdoor-redis-data:/data
+
+volumes:
+  hirealdoor-mysql-data:
+  hirealdoor-redis-data:

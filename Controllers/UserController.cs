@@ -1,4 +1,5 @@
 using Hirealdoor.Dtos.Requests;
+using Hirealdoor.DTos.Response;
 using Hirealdoor.Services;
 using Hirealdoor.Setting;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +10,7 @@ namespace Hirealdoor.Controllers
     [Route(ApiRoutes.Website.User)]
     public class UserController(IUserService userService) : ControllerBase
     {
-        [HttpPost("register")]
+        [HttpPost("register")]          
         public async Task<IActionResult> Register(EmailRequestDto emailRequestDto)
         {
             var user = await userService.RegisterEmailAsync(emailRequestDto);

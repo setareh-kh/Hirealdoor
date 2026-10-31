@@ -160,11 +160,58 @@ namespace Hirealdoor.Migrations
                     b.ToTable("ServedAreas");
                 });
 
+            modelBuilder.Entity("Hirealdoor.Models.Token", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Browser")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("ExpiredAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Hash")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<string>("IpAddress")
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<string>("Os")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Tokens");
+                });
+
             modelBuilder.Entity("Hirealdoor.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<bool?>("Active")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
@@ -280,6 +327,17 @@ namespace Hirealdoor.Migrations
                     b.Navigation("Province");
                 });
 
+            modelBuilder.Entity("Hirealdoor.Models.Token", b =>
+                {
+                    b.HasOne("Hirealdoor.Models.User", "User")
+                        .WithMany("Tokens")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("SpeaksLanguages", b =>
                 {
                     b.HasOne("Hirealdoor.Models.Person", null)
@@ -315,6 +373,8 @@ namespace Hirealdoor.Migrations
                     b.Navigation("Office");
 
                     b.Navigation("Person");
+
+                    b.Navigation("Tokens");
                 });
 #pragma warning restore 612, 618
         }
